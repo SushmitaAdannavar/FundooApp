@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="main">
+    <div class="section">
+        <div class="formfields">
+            <h1 style="line-height: 1.2px;text-align: center;font-weight: 500;color: brown;">Login form</h1>
+            <br><br>
+            <div>
+                <mat-form-field appearance="outline" style="width: 330px;">
+                  <mat-label>Username</mat-label>
+                  <input formControlName="email" matInput placeholder="Placeholder">
+                  <mat-error>Please enter valid email</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" style="width: 330px;">
+                  <mat-label>Password</mat-label>
+                  <input formControlName="password" matInput placeholder="Placeholder">
+                  <mat-error>It should be minimum 6 characters</mat-error>
+                  <mat-hint></mat-hint>
+                </mat-form-field>
+            </div>
+            <a routerLink="/forgotpassword"><p style="color: blue;">Forgot Password?</p><br></a>
+            <button mat-raised-button color="primary" (click)="login()" type="button">Login</button>
+        </div>
+    </div>
+</div>
+</form>
