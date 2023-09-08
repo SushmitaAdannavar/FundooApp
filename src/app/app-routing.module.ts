@@ -4,12 +4,17 @@ import { LoginComponent } from './components/login/login.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { SignupComponent } from './signup/signup.component';
+import { SidenavComponent } from './components/sidenav/sidenav/sidenav.component';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'forgotpassword',component:ForgotpasswordComponent},
-  {path:'resetpassword',component:ResetpasswordComponent}
+  {path:'resetpassword',component:ResetpasswordComponent},
+  {path:'home',component:SidenavComponent,
+  children:[{path:'notes',component:GetallnotesComponent}]
+  }
 ];
 
 @NgModule({

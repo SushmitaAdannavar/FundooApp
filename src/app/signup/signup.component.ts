@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../services/UserService/user.service';
 
 
 
@@ -12,13 +13,14 @@ import { Router } from '@angular/router';
 export class SignupComponent {
   signupForm!:FormGroup;
   submitted=false;
+  hide=false;
 
-  constructor(private formBuilder:FormBuilder,private router:Router){}
+  constructor(private formBuilder:FormBuilder,private router:Router,private userService:UserService){}
 
   ngOnInit(){
     this.signupForm=this.formBuilder.group({
       firstName:['',Validators.required],
-      lastNamw:['',Validators.required],
+      lastName:['',Validators.required],
       email:['',[Validators.required,Validators.email]],
       password:['',[Validators.required,Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
@@ -27,9 +29,19 @@ export class SignupComponent {
     });
   }
   signup(){
-    
-    console.log(this.signupForm.value);
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
+    let requestData={
+      firstName:this.signupForm.value.firstName,
+      lastName:this.signupForm.value.lastName,
+      service:"advance",
+      email:this.signupForm.value.email,
+      password:this.signupForm.value.password
+    }
+
+    this.userService.signupService(requestData).subscribe((result:any)=>{
+      console.log('result',result);
+    });this.router.navigate(['/login']);
+
 
   }
 }

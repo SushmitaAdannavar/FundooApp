@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/UserService/user.service';
 
 @Component({
   selector: 'app-resetpassword',
@@ -10,8 +11,9 @@ export class ResetpasswordComponent {
 
   loginForm!:FormGroup;
   submitted=false;
+  hide=true;
 
-  constructor(private formBuilder:FormBuilder){}
+  constructor(private formBuilder:FormBuilder,private userService:UserService){}
 
   ngOnInit(){
     this.loginForm=this.formBuilder.group({
@@ -23,6 +25,14 @@ export class ResetpasswordComponent {
   }
   passwordreset(){
     console.log(this.loginForm.value);
+    let requestdata={
+      service:"advance",
+      password:this.loginForm.value.password
+    }
+
+    this.userService.resetpasswordService(requestdata).subscribe((result:any)=>{
+      console.log('result',result);
+    });
   }
 }
 function MustMatch(arg0: string, arg1: string){

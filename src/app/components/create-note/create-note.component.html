@@ -1,0 +1,27 @@
+
+<div style="border:1px; border-radius:15.5px;box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);align-content: center;width: 650px;display: flex;flex-direction:column;justify-content: space-around;margin-left: 500px;margin-top: 50px;background-color: white;">
+  <div *ngIf="show" style="margin-bottom: 0;height: 50px;">
+      <mat-form-field style="width: 650px;">
+        <input matInput placeholder="Title" (click)="open()" [(ngModel)]="title">
+        <mat-icon matSuffix>push_pin</mat-icon>
+      </mat-form-field>
+  </div>
+  <div *ngIf="show || !show" style="height: 50px;">
+    <mat-form-field  style="width: 650px;" >
+      <input matInput placeholder="Take a note..." (click)="open()" [(ngModel)]="description">
+      <mat-icon matSuffix>check_circle_outline</mat-icon>
+      <mat-icon matSuffix>brush</mat-icon>
+      <mat-icon matSuffix>image</mat-icon>
+    </mat-form-field>
+  </div>
+  <div *ngIf="show" style="display: flex;justify-content: space-between;width:650px;background-color: white;z-index: 2;">
+    <div style="display: flex;justify-content: space-between;width: 350px;margin-left: 10px;"><mat-icon>add_alert</mat-icon>
+    <mat-icon>person_add_outline</mat-icon>
+    <mat-icon>palette</mat-icon>
+    <mat-icon>add_photo_alternate</mat-icon><mat-icon>archive</mat-icon>
+    <mat-icon>more_vert</mat-icon>
+    <mat-icon>undo</mat-icon><mat-icon>redo</mat-icon></div>
+    <button mat-button (click)="close()" matSuffix>Close</button>
+  </div>
+</div>
+

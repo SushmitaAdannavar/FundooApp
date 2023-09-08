@@ -1,0 +1,26 @@
+.notesList{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    margin-left: 200px;
+    margin-top: 50px;
+   }
+
+.notes {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  
+    width: 250px;
+    border: 1px ;
+    border-radius: 10px;height: auto;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+    align-content: center;
+    padding: 20px;
+  }
+  .title{
+    font-weight:700;
+    height: 40px;
+  }
+
+  
