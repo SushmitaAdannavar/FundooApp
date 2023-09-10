@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
@@ -10,16 +10,14 @@ export class DisplayComponent implements OnInit{
   NotesList!: Array<any>;
   title!: string;
 
+  @Input() childMessage!: Array<any>;
+
   constructor(private notesService:NotesService){
 
   }
 
   ngOnInit(): void {
-    this.notesService.getallNote().subscribe((res:any)=>{
-      console.log("get notes success",res.data.data[0].title)
-     this.NotesList=res.data.data;
-      
-      })
+    
   }
   
 }

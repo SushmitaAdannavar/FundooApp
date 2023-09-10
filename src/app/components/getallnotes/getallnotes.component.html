@@ -1,3 +1,9 @@
 <app-create-note></app-create-note>
-<app-display></app-display>
+<app-display [childMessage]="NotesList"></app-display>
 
+<!-- <div class="notesList">
+    <div *ngFor="let list of NotesList" class="notes">
+       <div class="title"> <h3>{{list.title}}</h3></div>
+        <div class="description">{{list.description}}</div>
+    </div>
+</div> -->

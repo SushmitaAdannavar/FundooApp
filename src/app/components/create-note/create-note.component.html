@@ -9,9 +9,9 @@
   <div *ngIf="show || !show" style="height: 50px;">
     <mat-form-field  style="width: 650px;" >
       <input matInput placeholder="Take a note..." (click)="open()" [(ngModel)]="description">
-      <mat-icon matSuffix>check_circle_outline</mat-icon>
-      <mat-icon matSuffix>brush</mat-icon>
-      <mat-icon matSuffix>image</mat-icon>
+      <mat-icon *ngIf="!show" matSuffix>check_circle_outline</mat-icon>
+      <mat-icon *ngIf="!show" matSuffix>brush</mat-icon>
+      <mat-icon *ngIf="!show" matSuffix>image</mat-icon>
     </mat-form-field>
   </div>
   <div *ngIf="show" style="display: flex;justify-content: space-between;width:650px;background-color: white;z-index: 2;">

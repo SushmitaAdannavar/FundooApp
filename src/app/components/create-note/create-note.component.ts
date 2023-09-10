@@ -23,10 +23,10 @@ export class CreateNoteComponent {
        title:this.title,
        description:this.description
     }
-
+    this.show=false;
     this.notesService.createNote(reqData).subscribe((res:any)=>{
       console.log(res);
-      this.show=false;
+      
       
     })
     
