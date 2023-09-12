@@ -1,10 +1,12 @@
-
 <div class="notesList">
     <div *ngFor="let list of childMessage" class="notes">
-        <div class="title"> <h3>{{list.title}}</h3></div>
+        <div class="title">
+            <h3>{{list.title}}</h3>
+            <mat-icon class="icon1">push_pin</mat-icon>
+        </div>
         <div class="description">{{list.description}}</div>
-        <div class="icon"><app-icons></app-icons></div>
+        <div class="icon">
+            <app-icons [lists]="list"></app-icons>
+        </div>
     </div>
 </div>
-
-

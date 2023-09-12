@@ -7,8 +7,9 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
   styleUrls: ['./getallnotes.component.scss']
 })
 export class GetallnotesComponent {
-  NotesList!: Array<any>;
+  NoteList!: Array<any>;
   title!: string;
+  NotesList!: Array<any>;
 
   constructor(private notesService:NotesService){
 
@@ -17,8 +18,13 @@ export class GetallnotesComponent {
  ngOnInit(): void{
   this.notesService.getallNote().subscribe((res:any)=>{
     console.log("get notes success",res.data.data[0].title)
-   this.NotesList=res.data.data;
+   this.NoteList=res.data.data;
+    console.log(this.NoteList)
     
+    this.NotesList=this.NoteList.filter((val)=>{
+      return val.isDeleted==false && val.isArchived==false;
     })
+    console.log(this.NotesList);
+  })
   }
 }

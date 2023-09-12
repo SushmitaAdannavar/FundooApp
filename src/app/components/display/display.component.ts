@@ -15,9 +15,10 @@ export class DisplayComponent implements OnInit{
   constructor(private notesService:NotesService){
 
   }
+  
 
   ngOnInit(): void {
-    
+    console.log(this.childMessage)
   }
   
 }

@@ -20,10 +20,5 @@ export class HttpService {
   GetService(url: string,  token: boolean, httpOption: any) {
     return this.http.get(this.BaseURL+url,token && httpOption);
   }
-  DeleteService(url:string,token:boolean,httpOption:any){
-     let reqbody={
-    id:"64fdd651902f10001f843afc"
-    }
-    return this.http.post(this.BaseURL+url,token && httpOption);
-  }
+  
 }

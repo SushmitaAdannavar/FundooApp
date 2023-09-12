@@ -35,7 +35,7 @@ export class NotesService {
     return this.httpService.GetService('notes/getNotesList', true, httpOptions)
   }
 
-  deleteNote(){
+  deleteNote(data:any){
 
   this.token=localStorage.getItem('token')
 
@@ -45,8 +45,20 @@ export class NotesService {
          Authorization:this.token
       })
     };
-    return this.httpService.DeleteService('notes/deleteForeverNotes',true, httpOptions)
+    return this.httpService.PostService('notes/trashNotes',data, true, httpOptions)
   }
+  ArchiveNote(data:any){
+
+    this.token=localStorage.getItem('token')
+  
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+           Authorization:this.token
+        })
+      };
+      return this.httpService.PostService('notes/archiveNotes',data, true, httpOptions)
+    }
 
 
 
