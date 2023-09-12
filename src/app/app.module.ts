@@ -27,7 +27,8 @@ import { DisplayComponent } from './components/display/display.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { TrashComponent } from './components/trash/trash.component';
-
+import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,11 +42,12 @@ import { TrashComponent } from './components/trash/trash.component';
     DisplayComponent,
     IconsComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
+    UpdatenoteComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,MatSidenavModule,MatListModule,MatToolbarModule,FormsModule,
+    AppRoutingModule,HttpClientModule,MatSidenavModule,MatListModule,MatToolbarModule,FormsModule,MatDialogModule,
     BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatIconModule,MatSelectModule,MatCheckboxModule,ReactiveFormsModule
   ],
   providers: [],

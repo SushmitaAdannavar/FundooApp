@@ -1,10 +1,10 @@
 <div class="notesList">
     <div *ngFor="let list of childMessage" class="notes">
-        <div class="title">
-            <h3>{{list.title}}</h3>
+        <div class="title" >
+            <h3 (click)="openDialog(list)">{{list.title}}</h3>
             <mat-icon class="icon1">push_pin</mat-icon>
         </div>
-        <div class="description">{{list.description}}</div>
+        <div class="description"  (click)="openDialog(list)">{{list.description}}</div>
         <div class="icon">
             <app-icons [lists]="list"></app-icons>
         </div>
