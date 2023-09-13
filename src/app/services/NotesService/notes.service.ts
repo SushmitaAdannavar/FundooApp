@@ -72,6 +72,19 @@ export class NotesService {
       return this.httpService.PostService('notes/updateNotes',data, true, httpOptions)
     }
 
+  colorNote(data:any){
+
+    this.token=localStorage.getItem('token')
+      
+      const httpOptions = {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+            Authorization:this.token
+          })
+      };
+      return this.httpService.PostService('notes/changesColorNotes',data, true, httpOptions)
+    }
+
 
 
 }

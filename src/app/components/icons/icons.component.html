@@ -2,7 +2,9 @@
 <div class="mainicon">
     <mat-icon>add_alert</mat-icon>
     <mat-icon>person_add_outline</mat-icon>
-    <mat-icon>palette</mat-icon>
+    <button (click)="colorpallette()" class="cp">
+        <mat-icon>palette</mat-icon>
+    </button>
     <mat-icon>add_photo_alternate</mat-icon>
     <button (click)="archive()" style="border: none;">
         <mat-icon>archive</mat-icon>
@@ -10,4 +12,14 @@
     <button (click)="delete()" style="border: none;">
         <mat-icon >more_vert</mat-icon>
     </button>
+</div>
+<div *ngIf="show" class="pallette" >
+    <div style="display:flex;" >
+        <button (click)="colortype('bool1','white')" class="button" [style.border-color]="bool1?'rgb(108, 239, 108)':''"></button><p [style.display]="bool1?'inline-block':'none'"  class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool2','coral')" class="button" style="background-color: coral;" [style.border-color]="bool2?'rgb(108, 239, 108)':''"></button><p [style.display]="bool2?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool3','palevioletred')" class="button" style="background-color:palevioletred;" [style.border-color]="bool3?'rgb(108, 239, 108)':''"></button><p [style.display]="bool3?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool4','slateblue')" class="button" style="background-color: slateblue;" [style.border-color]="bool4?'rgb(108, 239, 108)':''"></button><p [style.display]="bool4?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool5','mistyrose')" class="button" style="background-color: mistyrose;" [style.border-color]="bool5?'rgb(108, 239, 108)':''"></button><p [style.display]="bool5?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool6','saddlebrown')" class="button" style="background-color: saddlebrown" [style.border-color]="bool6?'rgb(108, 239, 108)':''"></button><p [style.display]="bool6?'inline-block':'none'" class="minicheck">&#9989;</p>
+    </div>
 </div>

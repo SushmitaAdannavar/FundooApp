@@ -25,13 +25,7 @@ export class CreateNoteComponent {
     }
     this.show=false;
     this.notesService.createNote(reqData).subscribe((res:any)=>{
-      console.log(res);
-      
-      
-    })
-    
-
-   
-    
+      console.log(res); 
+    }) 
    }
 }

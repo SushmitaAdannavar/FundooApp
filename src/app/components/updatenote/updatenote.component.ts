@@ -23,9 +23,6 @@ export class UpdatenoteComponent {
     }
   }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
   close(){
     console.log(this.id,this.title,this.description)
     let reqData={
@@ -38,4 +35,25 @@ export class UpdatenoteComponent {
       this.dialogRef.close();
     }) 
    }
+   archive(){
+    let data = {
+      noteIdList: [this.id],
+      isArchived: true,
+    }
+    this.notesService.ArchiveNote(data).subscribe((result)=>{
+      console.log('result',result);
+      this.dialogRef.close();
+    })
+  }
+  delete(){
+    console.log(this.id)
+    let data = {
+      noteIdList: [this.id],
+      isDeleted: true,
+    }
+    this.notesService.deleteNote(data).subscribe((result)=>{
+      console.log('result',result);
+      this.dialogRef.close();
+    })
+  }
 }
