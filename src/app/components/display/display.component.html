@@ -1,5 +1,5 @@
 <div class="notesList">
-    <div *ngFor="let list of childMessage" class="notes">
+    <div *ngFor="let list of childMessage" class="notes" [style.background]="list.color">
         <div class="title" >
             <h3 (click)="openDialog(list)">{{list.title}}</h3>
             <mat-icon class="icon1">push_pin</mat-icon>

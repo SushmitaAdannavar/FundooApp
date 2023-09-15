@@ -44,12 +44,14 @@ export class IconsComponent {
     else if(button=='bool4'){this.bool4=true;this.bool1=false;this.bool3=false;this.bool2=false;this.bool5=false;this.bool6=false}
     else if(button=='bool5'){this.bool5=true;this.bool1=false;this.bool3=false;this.bool4=false;this.bool2=false;this.bool6=false}
     else if(button=='bool6'){this.bool6=true;this.bool1=false;this.bool3=false;this.bool4=false;this.bool5=false;this.bool2=false}
+    
+    
     this.colorType=colors;
     this.id=this.lists.id;
     console.log(this.lists.id,this.colorType)
     let data = {
       noteIdList: [this.lists.id],
-      color:colors,
+      color:'#008080',
     }
     this.notesService.colorNote(data).subscribe((result)=>{
       console.log('result',result);

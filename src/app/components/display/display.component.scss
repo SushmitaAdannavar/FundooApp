@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-content:space-around;
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 18px;
    }
 
  .notes {
@@ -19,12 +19,12 @@
     padding: 20px;
   }
   .title{
-    display: flex;justify-content: space-between;
+    display: flex;justify-content: space-between;overflow: hidden;
     font-weight:700;
     height: 40px;
   }
   .description{
-    height: 40px;
+    height: 40px;overflow: hidden;
   }
   .icon{
     display: none;
