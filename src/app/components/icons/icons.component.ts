@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent {
-
+@Output() eventarchive=new EventEmitter<any>();
   @Input() lists:any;
   bool1=true;bool2!:boolean;bool3!: boolean;bool4!: boolean;bool5!: boolean;bool6!: boolean;
   colorType!: string;
@@ -22,6 +22,7 @@ export class IconsComponent {
     }
     this.notesService.deleteNote(data).subscribe((result)=>{
       console.log('result',result);
+      this.eventarchive.emit(data);
     })
   }
   archive(){
@@ -31,6 +32,7 @@ export class IconsComponent {
     }
     this.notesService.ArchiveNote(data).subscribe((result)=>{
       console.log('result',result);
+      this.eventarchive.emit(data);
     })
   }
   colorpallette(){
@@ -55,6 +57,7 @@ export class IconsComponent {
     }
     this.notesService.colorNote(data).subscribe((result)=>{
       console.log('result',result);
+      this.eventarchive.emit(data);
     })
   }
 }

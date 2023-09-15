@@ -1,5 +1,5 @@
-<app-create-note></app-create-note>
-<app-display [childMessage]="NotesList"></app-display>
+<app-create-note (refreshEvent)="forrefresh($event)"></app-create-note>
+<app-display [childMessage]="NotesList" (refresharchive)="forarchive($event)"></app-display>
 
 <!-- <div class="notesList">
     <div *ngFor="let list of NotesList" class="notes">

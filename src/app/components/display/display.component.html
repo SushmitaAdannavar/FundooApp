@@ -6,7 +6,7 @@
         </div>
         <div class="description"  (click)="openDialog(list)">{{list.description}}</div>
         <div class="icon">
-            <app-icons [lists]="list"></app-icons>
+            <app-icons [lists]="list" (eventarchive)="forarchive($event)"></app-icons>
         </div>
     </div>
 </div>

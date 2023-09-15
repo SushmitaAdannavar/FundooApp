@@ -19,12 +19,19 @@ export class GetallnotesComponent {
   this.notesService.getallNote().subscribe((res:any)=>{
     console.log("get notes success",res.data.data[0].title)
    this.NoteList=res.data.data;
-    console.log(this.NoteList)
     
     this.NotesList=this.NoteList.filter((val)=>{
       return val.isDeleted==false && val.isArchived==false;
     })
     console.log(this.NotesList);
   })
+  }
+
+  forrefresh(e:any)
+  {
+    this.ngOnInit();
+  }
+  forarchive(e:any){
+    this.ngOnInit();
   }
 }

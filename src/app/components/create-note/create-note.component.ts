@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/NotesService/notes.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
 })
 export class CreateNoteComponent {
 
+@Output() refreshEvent=new EventEmitter<any>();
+
   title!: string;
   description!: string;
 
@@ -16,6 +18,8 @@ export class CreateNoteComponent {
    show=false;
    open(){
     this.show=true;
+    
+    
    }
    close(){
 
@@ -26,6 +30,8 @@ export class CreateNoteComponent {
     this.show=false;
     this.notesService.createNote(reqData).subscribe((res:any)=>{
       console.log(res); 
+
+      this.refreshEvent.emit(reqData)
     }) 
    }
 }
