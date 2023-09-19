@@ -6,7 +6,7 @@
     </div>
     <div class="searchdiv">
       <mat-form-field  class="search" appearance="fill">
-        <input matInput placeholder="Search">
+        <a mat-list-item routerLink="./search"><input matInput placeholder="Search" (keyup)="onKeyup(searchValue)"  [(ngModel)]="searchValue"></a> 
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
     </div>
@@ -34,7 +34,7 @@
         <br>
         <a mat-list-item routerLink="." class="sidebar"><img src="../../../../assets/editimg.jpg">Edit labels</a>
         <br>
-        <a mat-list-item routerLink="./archive" class="sidebar"><img src="../../../../assets/archiveimg.jpg">Archive</a>
+        <a mat-list-item routerLink="./archive" class="sidebar"><img src="../../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg">Archive</a>
         <br>
         <a mat-list-item routerLink="./trash" class="sidebar"><img src="../../../../assets/trashimg.jpg">Trash</a>
 

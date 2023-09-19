@@ -1,27 +1,21 @@
-<div style="display:flex;flex-direction:column;justify-content: space-around;">
-    <div style="margin-bottom: 0;height: 50px;">
-        <mat-form-field style="width: 500px;">
+<div class="updatemain">
+    <div class="title">
+        <mat-form-field class="titleform">
             <input matInput [(ngModel)]="title">
             <mat-icon matSuffix>push_pin</mat-icon>
         </mat-form-field>
     </div>
-    <div style="margin-bottom: 0;height: 87px;">
-        <mat-form-field style="width: 500px;border-color: white;" >
+    <div class="description">
+        <mat-form-field class="descform" >
             <textarea matInput [(ngModel)]="description"></textarea>
         </mat-form-field>
     </div>
-    <div style="display: flex;justify-content: space-between;width: 490px;background-color: white;z-index: 2;">
-        <div style="display: flex;justify-content: space-between;width:350px;margin-left: 10px;">
-          <mat-icon>add_alert</mat-icon>
-          <mat-icon>person_add_outline</mat-icon>
-          <mat-icon>palette</mat-icon>
-          <mat-icon>add_photo_alternate</mat-icon>
-          <button (click)="archive()" style="border: none;">
-            <mat-icon>archive</mat-icon>
-         </button>
-         <button (click)="delete()" style="border: none;"><mat-icon>more_vert</mat-icon></button> 
-          <mat-icon>undo</mat-icon><mat-icon>redo</mat-icon>
+    <div class="icons">
+        <div class="iconform">
+            <app-icons></app-icons>
         </div>
         <button mat-button matSuffix (click)="close()">Close</button>
-      </div>
+    </div>
+
+   
 </div>

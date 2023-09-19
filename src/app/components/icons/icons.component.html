@@ -1,18 +1,25 @@
 
 <div class="mainicon">
-    <mat-icon>add_alert</mat-icon>
-    <mat-icon>person_add_outline</mat-icon>
-    <button (click)="colorpallette()" class="cp">
-        <mat-icon>palette</mat-icon>
-    </button>
-    <mat-icon>add_photo_alternate</mat-icon>
-    <button (click)="archive()" style="border: none;">
-        <mat-icon>archive</mat-icon>
-    </button>
-    <button (click)="delete()" style="border: none;">
-        <mat-icon >more_vert</mat-icon>
-    </button>
+    <!-- <mat-icon >add_alert</mat-icon>-->
+    <img src="../../../assets/add_alert.svg"> 
+    <!-- <mat-icon>person_add_outline</mat-icon> -->
+    <img src="../../../assets/personadd2.svg">
+    <!-- <mat-icon (click)="colorpallette()" class="cp">palette</mat-icon> -->
+    <img src="../../../assets/palette.svg" (click)="colorpallette()" class="cp">
+    <!-- <mat-icon>add_photo_alternate</mat-icon> -->
+    <img src="../../../assets/add_photo_alternate_FILL0_wght300_GRAD0_opsz24.svg">
+    <!-- <mat-icon (click)="archive()" style="border: none;">archive</mat-icon> -->
+    <img src="../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" (click)="archive()">
+    <!-- <mat-icon (click)="delete()" style="border: none;">more_vert</mat-icon> -->
+    
+    <img src="../../../assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" (click)="more()" class=" dropdown" >
+    <div *ngIf="showc"  class=" dropdown-content">
+        <span (click)="delete()" style="border: 1px ;height: 40px;">Delete Note</span><hr>
+        <span style="border: 1px ;height: 40px;">Add label</span><hr>
+        <span style="border: 1px ;height: 40px;">Add drawing</span><hr>
+    </div>
 </div>
+
 <div *ngIf="show" class="pallette" >
     <div style="display:flex;" >
         <button (click)="colortype('bool1','white')" class="button" [style.border-color]="bool1?'rgb(108, 239, 108)':''"></button><p [style.display]="bool1?'inline-block':'none'"  class="minicheck">&#9989;</p>

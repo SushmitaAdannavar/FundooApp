@@ -10,11 +10,12 @@ export class IconsComponent {
 @Output() eventarchive=new EventEmitter<any>();
   @Input() lists:any;
   bool1=true;bool2!:boolean;bool3!: boolean;bool4!: boolean;bool5!: boolean;bool6!: boolean;
-  colorType!: string;
+  colorType!: string;showc=false;
   show=false;id:any;
   constructor(private notesService:NotesService){}
   
   delete(){
+    
     console.log(this.lists.id)
     let data = {
       noteIdList: [this.lists.id],
@@ -37,6 +38,10 @@ export class IconsComponent {
   }
   colorpallette(){
   this.show=true;
+  
+  }
+  more(){
+    this.showc=true
   }
 
   colortype(button:any,colors:string){

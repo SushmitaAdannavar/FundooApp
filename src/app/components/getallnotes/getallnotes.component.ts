@@ -6,7 +6,7 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
   templateUrl: './getallnotes.component.html',
   styleUrls: ['./getallnotes.component.scss']
 })
-export class GetallnotesComponent {
+export class GetallnotesComponent implements OnInit{
   NoteList!: Array<any>;
   title!: string;
   NotesList!: Array<any>;

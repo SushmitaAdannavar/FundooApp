@@ -1,7 +1,9 @@
 .mainicon{
-    width: 240px;
+    width: 210px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-top: 6px;
+    // margin-left: -10px;
 }
 .cp{
     border: none;
@@ -9,7 +11,7 @@
 
 .pallette{
     display: flex;position: absolute;margin-left: -60px;
-    border:1px; 
+    border:1px; overflow: visible;
     border-radius:15.5px;
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 2px 6px 2px rgba(60,64,67,0.149);
     align-content: center;
@@ -19,6 +21,11 @@
     // margin-left: 500px;
     // margin-top: 50px;
     background-color: white;
+}
+
+.more{
+    display: flex;justify-content: space-between;
+    position: absolute;margin-left: 0px;margin-top: 30px;
 }
 
 .button {
@@ -32,4 +39,26 @@
     display: none;
     // display: inline-block;
     margin-left: -7px;
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-content {
+    display: block;
+    position: absolute;
+    width: 150px;height:270px;margin-top: 45px;margin-left: 85px;
+    overflow: auto;height: 120px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  
+
+
+@media only screen and (max-width: 412px){
+    .mainicon{
+        width: 160px;
+        display: flex;
+        justify-content: space-around;
+        margin-left: -10px;
+    }
 }
