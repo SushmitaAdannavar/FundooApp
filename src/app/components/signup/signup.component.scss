@@ -3,11 +3,14 @@
     top: 90px;
     
 }
+.h1{
+    margin-top: 0px;
+}
 .namefields{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    
+    margin-top: 5px;
 
 }
 .section{
@@ -35,10 +38,92 @@
     flex-direction: column;
     justify-content: center;
 }
+.usernamefield{
+    width: 550px;
+}
 .footer{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     margin-left: 300px;
     margin-right: 300px;
+}
+.img{
+    height:200px; width:200px;
+}
+.passfield{
+    width: 225px;
+}
+.passfield1{
+    width: 50px;
+}
+.footer{
+    order:1;width: 20px;padding: 0;
+}
+@media only screen and (max-width: 412px){
+
+    .main{
+        position: relative;
+        top: 20px;
+    }
+    .section{
+        border-style: groove;
+    border-radius: 10px;padding: 0;
+        margin-left: 10px;
+        margin-right: 0px;
+        height: 830px;
+    width: 361px;align-items: center;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .section1{
+        order:2;align-items: center;
+        width: 310px;
+        margin-left: 15px;
+        margin-top: 0px;
+        height: 750px;
+    }
+    .section2{
+        order: 1;
+        width: 310px;margin-left: -10px;margin-top: 15px;
+        display: flex;height: 150px;
+        flex-direction: column;
+        
+    }
+    .namefields{
+        display: flex;
+        flex-direction: column;
+    }
+    .usernamefield{
+        width: 260px;
+    }
+    .img{
+        height:140px; width:140px;
+    }
+    .h1{
+        margin-top: -10px;margin-left: -10px;
+    }
+    .passfield{
+        width: 265px;
+    }
+    .passfield1{
+        width: 20px;
+    }
+    .end{
+        margin-left: 12px;margin-right: 37px;margin-top: -25px;
+    }
+    .password{
+        display: flex;flex-direction: row;justify-content: left;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .footer1{
+        order:1;width: 10px;padding: 0;
+    }
 }

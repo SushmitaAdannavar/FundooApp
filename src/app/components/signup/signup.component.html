@@ -1,83 +1,90 @@
-<form [formGroup]="signupForm" >
-<div class="main">
+<div class="main" [formGroup]="signupForm">
     <div class="section">
         <div class="section1">
-        <h1 style="color: brown;letter-spacing: 0.6px;font-weight: 500;">F<span style="color: yellowgreen;">u</span><span style="color: sandybrown;">n</span><span style="color: blueviolet;">d</span><span style="color: red;">o</span><span style="color: green;">o</span></h1>
-        <h1>Create your fundoo account</h1>
-        <div class="namefields">
-            <div style="order: 1;">
-                <mat-form-field appearance="outline" style="width: 260px;">
-                <mat-label>First name</mat-label>
-                <input matInput formControlName="firstName" placeholder="Placeholder">
-                </mat-form-field>
-            </div>
-            <div style="order: 2;">
-                <mat-form-field appearance="outline" style="width: 260px;">
-                <mat-label>Last name</mat-label>
-                <input matInput formControlName="lastName" placeholder="Placeholder">
-                </mat-form-field>
-            </div>
-        </div>
-        <div >
-            <mat-form-field appearance="outline" style="width: 550px;">
-                <mat-label>Username</mat-label>
-                <input matInput formControlName="email" placeholder="Enter email" >
-                <mat-hint>You can use letters,numbers and periods</mat-hint>
-                <mat-error>Please enter valid Username</mat-error>
-            </mat-form-field>
-            <a style="color:blue;line-height: 2.4;">Use my current email adresss instead</a>
-            <br>
-            <p></p>
-        </div>
-        <div class="namefields">
-            <div style="order: 1;width: 225px;">
-                <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" placeholder="Placeholder">
-                <mat-hint >Use 6 or more characters </mat-hint>
-                <mat-error>Password has to be minimum 6 characters</mat-error>
-                </mat-form-field>
-            </div>
-            <div style="order: 2;width:225px">
-                <mat-form-field appearance="outline">
-                <mat-label>Confirm</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword" placeholder="Placeholder">
-                <mat-error>Password doesnt match</mat-error>
-                <mat-hint>of letters,numbers,symbols</mat-hint>
-                </mat-form-field>
-            </div>
-            <div style="order: 3;width: 50px;">
-                <button mat-icon-button (click)="hide = !hide" style="font-size: xx-large;">
-                <mat-icon style="font-size: x-large;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon></button>
-            </div>
-        </div>
-        <br><br>
-        <div style="display: flex;flex-direction: row;justify-content: space-between;">
-            <div>
-                <a routerLink="/login" style="color:blue;line-height: 2.4;font-size: medium;">Sign in instead</a>
+            <h1 style="color: brown;letter-spacing: 0.6px;font-weight: 500;">F<span
+                    style="color: yellowgreen;">u</span><span style="color: sandybrown;">n</span><span
+                    style="color: blueviolet;">d</span><span style="color: red;">o</span><span
+                    style="color: green;">o</span></h1>
+            <h1 class="h1">Create your fundoo account</h1>
+            <div class="namefields">
+                <div style="order: 1;">
+                    <mat-form-field appearance="outline" style="width: 260px;">
+                        <mat-label>First name</mat-label>
+                        <input matInput formControlName="firstName" placeholder="Placeholder">
+                        <mat-error>PLease enter firstname</mat-error>
+                    </mat-form-field>
+                </div>
+                <div style="order: 2;">
+                    <mat-form-field appearance="outline" style="width: 260px;">
+                        <mat-label>Last name</mat-label>
+                        <input matInput formControlName="lastName" placeholder="Placeholder">
+                        <mat-error>PLease enter lastname</mat-error>
+                    </mat-form-field>
+                </div>
             </div>
             <div>
-            <button mat-raised-button color="primary" (click)="signup()">Next</button>
+                <mat-form-field appearance="outline" class="usernamefield">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="email" placeholder="Enter email">
+                    <mat-hint>You can use letters,numbers,periods</mat-hint>
+                    <mat-error>Please enter valid Username</mat-error>
+                </mat-form-field>
+                <div><a style="color:blue;">Use my current email adresss instead</a></div>
             </div>
-        </div>
+            <div class="namefields">
+                <div style="order: 1;" class="passfield">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
+                            placeholder="Placeholder">
+                        <mat-hint>Use 6 or more characters </mat-hint>
+                        <mat-error>Password has to be minimum 6 characters</mat-error>
+                    </mat-form-field>
+                </div>
+                <div style="order: 2;" class="passfield">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmPassword"
+                            placeholder="Placeholder">
+                        <mat-error>Password doesnt match</mat-error>
+                        <mat-hint>of letters,numbers,symbols</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div style="order:3;" class="passfield1">
+                    <button mat-icon-button (click)="hide = !hide" style="font-size: xx-large;">
+                        <mat-icon style="font-size: x-large;">{{hide ? 'visibility_off' :
+                            'visibility'}}</mat-icon></button>
+                </div>
+            </div>
+            <br><br>
+            <div style="display: flex;flex-direction: row;justify-content: space-between;" class="end">
+                <div>
+                    <a routerLink="/login" style="color:blue;line-height: 2.4;font-size: medium;">Sign in instead</a>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" (click)="signup()">Next</button>
+                </div>
+            </div>
         </div>
         <div class="section2">
-            <div style="order: 1;align-items: center;display: flex;justify-content: center;"><img src="../../assets/logoimg.jpg" height="200px" width="200px"></div>
+            <div style="order: 1;align-items: center;display: flex;justify-content: center;"><img
+                    src="../../assets/logoimg.jpg"  class="img"></div>
             <div style="text-align: center;order: 2;"> One account. All of Fundoo <br>working for you.</div>
         </div>
     </div>
     <footer class="footer">
-        <div style="order:1;width: 20px;padding: 0;">
-        <mat-form-field style="height: 65px;">
-            <select matNativeControl required>
-              <option value="option" >English(UnitedStates)</option>
-              <option value="option">Arabic</option>
-            </select>
-        </mat-form-field>
+        <div style="order:1;width: 20px;padding: 0;" class="footer1">
+            <mat-form-field style="height: 65px;">
+                <select matNativeControl required>
+                    <option value="option">English(UnitedStates)</option>
+                    <option value="option">Arabic</option>
+                </select>
+            </mat-form-field>
         </div>
         <div style="order: 2;display: flex;flex-direction: row;justify-content: space-between;width: 150px;padding-top: 10px;">
-            <div>Help</div> <div>Privacy</div> <div>Terms</div>
+            <div>Help</div>
+            <div>Privacy</div>
+            <div>Terms</div>
         </div>
     </footer>
 </div>
-</form>

@@ -5,8 +5,9 @@
       <h1 class="example-app-name">Fundoo Notes</h1>
     </div>
     <div class="searchdiv">
-      <mat-form-field  class="search" appearance="fill">
-        <a mat-list-item routerLink="./search"><input matInput placeholder="Search" (keyup)="onKeyup(searchValue)"  [(ngModel)]="searchValue"></a> 
+      <mat-form-field class="search" appearance="fill">
+        <a mat-list-item routerLink="./search"><input matInput placeholder="Search" (keyup)="onKeyup(searchValue)"
+            [(ngModel)]="searchValue"></a>
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
     </div>
@@ -22,21 +23,34 @@
       fixedTopGap="56">
       <mat-nav-list>
         <br>
-        <a mat-list-item routerLink="./notes" style="align-items: center;padding: 20px;"class="sidebar">
-          <img src="../../../../assets/notesimg.jpg" height="25px">
-         <span style="align-items: center;">Notes</span> 
+        <a mat-list-item routerLink="./notes" class="sidebar" routerLinkActive="active">
+          <div class="sidebar1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="margin-left: 11px;"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
+            <p style="margin-top: 13px;width: 170px;">Notes </p>
+          </div>
         </a>
-        <br>
-        <a mat-list-item routerLink="." class="sidebar">
-            <img src="../../../../assets/reminderimg.jpg" height="25px">
-            Reminders
+        <a mat-list-item routerLink="./reminders" class="sidebar" routerLinkActive="active">
+          <div class="sidebar1"><img src="../../../../assets/add_alert.svg" height="25px" style="margin-left: 10px;">
+            <p style="margin-top: 13px;width: 170px;"> Reminders</p>
+          </div>
         </a>
-        <br>
-        <a mat-list-item routerLink="." class="sidebar"><img src="../../../../assets/editimg.jpg">Edit labels</a>
-        <br>
-        <a mat-list-item routerLink="./archive" class="sidebar"><img src="../../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg">Archive</a>
-        <br>
-        <a mat-list-item routerLink="./trash" class="sidebar"><img src="../../../../assets/trashimg.jpg">Trash</a>
+        <a mat-list-item routerLink="./labels" class="sidebar" routerLinkActive="active">
+          <div class="sidebar1"><img src="../../../../assets/edit_FILL0_wght300_GRAD0_opsz24.svg" height="25px"
+              style="margin-left: 10px;">
+            <p style="margin-top: 13px;width: 170px;"> Edit labels</p>
+          </div>
+        </a>
+        <a mat-list-item routerLink="./archive" class="sidebar" routerLinkActive="active">
+          <div class="sidebar1"><img src="../../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" height="25px"
+              style="margin-left: 10px;">
+            <p style="margin-top: 13px;width: 170px;">Archive</p>
+          </div>
+        </a>
+        <a mat-list-item routerLink="./trash" class="sidebar" routerLinkActive="active">
+          <div class="sidebar1"><img src="../../../../assets/delete_FILL0_wght300_GRAD0_opsz24.svg" height="25px"
+              style="margin-left: 10px;">
+            <p style="margin-top: 13px;width: 170px;">Trash</p>
+          </div>
+        </a>
 
       </mat-nav-list>
     </mat-sidenav>

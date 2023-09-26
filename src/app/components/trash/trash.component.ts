@@ -24,4 +24,8 @@ export class TrashComponent {
       console.log(this.NotesList);
     })
     }
+
+    forarchive(e:any){
+      this.ngOnInit();
+    }
 }

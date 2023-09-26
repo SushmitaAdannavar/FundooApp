@@ -24,4 +24,8 @@ export class ArchiveComponent {
       console.log(this.NotesList);
     })
     }
+
+    forarchive(e:any){
+      this.ngOnInit();
+    }
 }
