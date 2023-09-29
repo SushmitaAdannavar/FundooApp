@@ -10,6 +10,7 @@ export class TrashComponent {
 
   NoteList!: Array<any>;
   NotesList!: Array<any>;
+  icontrash:boolean=true;
   constructor(private notesService:NotesService){}
 
   ngOnInit(): void{

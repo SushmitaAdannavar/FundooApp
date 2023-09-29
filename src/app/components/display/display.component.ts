@@ -10,9 +10,13 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 export class DisplayComponent implements OnInit{
   NotesList!: Array<any>;
   title!: string;
+  
 
   @Input() childMessage!: Array<any>;
+  @Input() childMessage1!:boolean ;
+  @Input() childMessage2!:boolean;
   @Output() refresharchive=new EventEmitter<any>();
+  
 
   constructor(private notesService:NotesService,public dialog:MatDialog){
 
@@ -20,6 +24,7 @@ export class DisplayComponent implements OnInit{
 
   ngOnInit(): void {
     console.log(this.childMessage)
+    
   }
 
   openDialog(list:any): void {

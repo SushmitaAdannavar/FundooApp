@@ -9,6 +9,7 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
 export class ArchiveComponent {
 
   NoteList!: Array<any>;
+  showicons:boolean=true;
   NotesList!: Array<any>;
   constructor(private notesService:NotesService){}
 
@@ -19,7 +20,7 @@ export class ArchiveComponent {
       console.log(this.NoteList)
       
       this.NotesList=this.NoteList.filter((val)=>{
-        return val.isArchived==true;
+        return val.isArchived==true && val.isDeleted==false;
       })
       console.log(this.NotesList);
     })

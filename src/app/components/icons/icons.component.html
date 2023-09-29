@@ -1,33 +1,48 @@
-
 <div class="mainicon">
-    <!-- <mat-icon >add_alert</mat-icon>-->
-    <img src="../../../assets/add_alert.svg"> 
-    <!-- <mat-icon>person_add_outline</mat-icon> -->
-    <img src="../../../assets/personadd2.svg">
-    <!-- <mat-icon (click)="colorpallette()" class="cp">palette</mat-icon> -->
-    <img src="../../../assets/palette.svg" (click)="colorpallette()" class="cp">
-    <!-- <mat-icon>add_photo_alternate</mat-icon> -->
-    <img src="../../../assets/add_photo_alternate_FILL0_wght300_GRAD0_opsz24.svg">
-    <!-- <mat-icon (click)="archive()" style="border: none;">archive</mat-icon> -->
-    <img src="../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" (click)="archive()">
-    <!-- <mat-icon (click)="delete()" style="border: none;">more_vert</mat-icon> -->
-    
-    <img src="../../../assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" (click)="more()" class=" dropdown" >
-    <div *ngIf="showc"  class=" dropdown-content">
-        <span (click)="delete()" style="border: 1px ;height: 40px;">Delete Note</span><hr>
-        <span style="border: 1px ;height: 40px;">Add label</span><hr>
-        <span style="border: 1px ;height: 40px;">Add drawing</span><hr>
-    </div>
+
+    <img *ngIf="!icontrash" src="../../../assets/add_alert.svg">
+
+    <img *ngIf="!icontrash" src="../../../assets/personadd2.svg">
+
+    <img *ngIf="!icontrash" src="../../../assets/palette.svg" (click)="colorpallette()" class="cp">
+
+    <img *ngIf="!icontrash" src="../../../assets/add_photo_alternate_FILL0_wght300_GRAD0_opsz24.svg">
+
+    <img *ngIf="!iconshowarchive && !icontrash" src="../../../assets/archive_FILL0_wght300_GRAD0_opsz24.svg" (click)="archive()">
+    <img *ngIf="iconshowarchive && !icontrash" src="../../../assets/unarchive_FILL0_wght300_GRAD0_opsz24.svg" (click)="unarchive()">
+    <img *ngIf="icontrash" src="../../../assets/restore_from_trash_FILL0_wght300_GRAD0_opsz24.svg" (click)="restore()" style="margin-left: 30px;">
+    <img *ngIf="icontrash" src="../../../assets/delete_FILL0_wght300_GRAD0_opsz24.svg" (click)="permanentdelete()" style="margin-right: 30px;">
+    <img *ngIf="!icontrash" src="../../../assets/more_vert_FILL0_wght300_GRAD0_opsz24.svg" (click)="more()" [matMenuTriggerFor]="menu"
+        class=" dropdown">
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="delete()">
+            <span>Delete Note</span>
+        </button>
+        <button mat-menu-item disabled>
+            <span>Add label</span>
+        </button>
+        <button mat-menu-item disabled>
+            <span>Add Drawing</span>
+        </button>
+    </mat-menu>
 </div>
 
-<div *ngIf="show" class="pallette" >
-    <div style="display:flex;" >
-        <button (click)="colortype('bool1','#FFFFFF')" class="button"  [style.border-color]="bool6?'rgb(108, 239, 108)':''"></button><p [style.display]="bool1?'inline-block':'none'"  class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool2','#faafa8')" class="button" style="background-color: #faafa8;" ></button><p [style.display]="bool2?'inline-block':'none'" class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool3','#f39f76')" class="button" style="background-color:#f39f76;"></button><p [style.display]="bool3?'inline-block':'none'" class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool4','#fff8b8')" class="button" style="background-color: #fff8b8;" ></button><p [style.display]="bool4?'inline-block':'none'" class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool5','#e2f6d3')" class="button" style="background-color: #e2f6d3;" ></button><p [style.display]="bool5?'inline-block':'none'" class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool6','#d3bfdb')" class="button" style="background-color: #d3bfdb"></button><p [style.display]="bool6?'inline-block':'none'" class="minicheck">&#9989;</p>
-        <button (click)="colortype('bool7','#e9e3d4')" class="button" style="background-color: #e9e3d4"></button><p [style.display]="bool7?'inline-block':'none'" class="minicheck">&#9989;</p>
+<div *ngIf="show" class="pallette">
+    <div style="display:flex;">
+        <button (click)="colortype('bool1','#FFFFFF')" class="button"
+            [style.border-color]="bool6?'rgb(108, 239, 108)':''"></button>
+        <p [style.display]="bool1?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool2','#faafa8')" class="button" style="background-color: #faafa8;"></button>
+        <p [style.display]="bool2?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool3','#f39f76')" class="button" style="background-color:#f39f76;"></button>
+        <p [style.display]="bool3?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool4','#fff8b8')" class="button" style="background-color: #fff8b8;"></button>
+        <p [style.display]="bool4?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool5','#e2f6d3')" class="button" style="background-color: #e2f6d3;"></button>
+        <p [style.display]="bool5?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool6','#d3bfdb')" class="button" style="background-color: #d3bfdb"></button>
+        <p [style.display]="bool6?'inline-block':'none'" class="minicheck">&#9989;</p>
+        <button (click)="colortype('bool7','#e9e3d4')" class="button" style="background-color: #e9e3d4"></button>
+        <p [style.display]="bool7?'inline-block':'none'" class="minicheck">&#9989;</p>
     </div>
 </div>

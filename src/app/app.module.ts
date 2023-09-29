@@ -8,6 +8,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,7 @@ import { SearchComponent } from './components/search/search.component';
     SearchComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,MatMenuModule,
     AppRoutingModule,HttpClientModule,MatSidenavModule,MatListModule,MatToolbarModule,FormsModule,MatDialogModule,
     BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatButtonModule,MatIconModule,MatSelectModule,MatCheckboxModule,ReactiveFormsModule
   ],

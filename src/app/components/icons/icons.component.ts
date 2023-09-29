@@ -9,11 +9,16 @@ import { NotesService } from 'src/app/services/NotesService/notes.service';
 export class IconsComponent {
 @Output() eventarchive=new EventEmitter<any>();
   @Input() lists:any;
+  @Input() iconshow!:boolean;
+  @Input() icontrashshow!:boolean;
   bool1=true;bool2!:boolean;bool3!: boolean;bool4!: boolean;bool5!: boolean;bool6!: boolean;bool7!: boolean;
   colorType!: string;showc=false;
-  show=false;id:any;
+  show=false;id:any;iconshowarchive=false;icontrash=false;
   constructor(private notesService:NotesService){}
-  
+  ngOnInit(){
+    this.iconshowarchive=this.iconshow;
+    this.icontrash=this.icontrashshow;
+  }
   delete(){
     
     console.log(this.lists.id)
@@ -26,10 +31,40 @@ export class IconsComponent {
       this.eventarchive.emit(data);
     })
   }
+  restore(){
+    let data = {
+      noteIdList: [this.lists.id],
+      isDeleted: false,
+    }
+    this.notesService.deleteNote(data).subscribe((result)=>{
+      console.log('result',result);
+      this.eventarchive.emit(data);
+    })
+  }
+  permanentdelete(){
+    let data = {
+      noteIdList: [this.lists.id],
+      isDeleted: true,
+    }
+    this.notesService.deleteNotePermanent(data).subscribe((result)=>{
+      console.log('result',result);
+      this.eventarchive.emit(data);
+    })
+  }
   archive(){
     let data = {
       noteIdList: [this.lists.id],
       isArchived: true,
+    }
+    this.notesService.ArchiveNote(data).subscribe((result)=>{
+      console.log('result',result);
+      this.eventarchive.emit(data);
+    })
+  }
+  unarchive(){
+    let data = {
+      noteIdList: [this.lists.id],
+      isArchived: false,
     }
     this.notesService.ArchiveNote(data).subscribe((result)=>{
       console.log('result',result);

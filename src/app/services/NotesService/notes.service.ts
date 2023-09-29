@@ -47,6 +47,17 @@ export class NotesService {
     };
     return this.httpService.PostService('notes/trashNotes',data, true, httpOptions)
   }
+  deleteNotePermanent(data:any){
+    this.token=localStorage.getItem('token')
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+         Authorization:this.token
+      })
+    };
+    return this.httpService.PostService('notes/deleteForeverNotes',data, true, httpOptions)
+  }
   ArchiveNote(data:any){
 
     this.token=localStorage.getItem('token')
