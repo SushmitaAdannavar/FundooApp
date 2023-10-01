@@ -1,6 +1,8 @@
 
 import {MediaMatcher} from '@angular/cdk/layout';
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthguardService } from 'src/app/services/authguard.service';
 import { DataService } from 'src/app/services/dataService/data.service';
 
 @Component({
@@ -16,7 +18,7 @@ export class SidenavComponent {
 
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private dataService:DataService) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private dataService:DataService,private router:Router,private authguard:AuthguardService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -29,6 +31,11 @@ export class SidenavComponent {
   onKeyup(searchValue:string){
     console.log(searchValue)
     this.dataService.changeMessage(searchValue);
+  }
+
+  logout(){
+    this.authguard.logout();
+    this.router.navigateByUrl('login')
   }
 
 }

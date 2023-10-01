@@ -15,6 +15,12 @@
       <img src="../../../../assets/refresh_FILL0_wght400_GRAD0_opsz24.png">
       <img src="../../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz24.png">
       <img src="../../../../assets/settings_FILL0_wght400_GRAD0_opsz24.png">
+      <img src="../../../../assets/profileimg.png" [matMenuTriggerFor]="menulogout" height="23px" width="23px" class="profileimg">
+            <mat-menu #menulogout="matMenu">
+                <button mat-menu-item (click)="logout()">
+                    <span>Log out</span>
+                </button>
+            </mat-menu>
     </div>
   </mat-toolbar>
   <mat-divider style="margin-top: 8px;"> </mat-divider>

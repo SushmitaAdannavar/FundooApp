@@ -9,15 +9,18 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
 import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { SearchComponent } from './components/search/search.component';
+import { AuthenticationGuard } from './authentication.guard';
 
 const routes: Routes = [
+  {path:'',redirectTo:"/login",pathMatch:'full'},
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
   { path: 'resetpassword', component: ResetpasswordComponent },
   {
     path: 'home', component: SidenavComponent,
-    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'search',component:SearchComponent}]
+    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'search',component:SearchComponent}],
+    canActivate:[AuthenticationGuard]
   }
 ];
 
