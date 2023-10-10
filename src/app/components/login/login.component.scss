@@ -1,18 +1,154 @@
-.main{
+.main {
     position: relative;
     top: 130px;
-    
+
 }
-.section{
+
+.section {
     border-style: groove;
     border-radius: 10px;
     margin-left: 500px;
     margin-right: 500px;
     height: 450px;
 }
-.formfields{
+
+.formfields {
 
     margin-top: 40px;
     text-align: center;
 
+}
+
+.h1 {
+    text-align: left;
+    font-weight: 200;
+    color: black;
+    margin-left: 100px;
+}
+
+.fields {
+    width: 330px;
+}
+
+.passshow {
+    text-align: left;
+    margin-left: -200px;
+    margin-top: 0px;
+}
+.end{
+    display: flex; justify-content:space-between;flex-direction: row;width: 330px;margin-left: 100px;text-align: center;
+}
+
+
+@media only screen and (max-width: 412px) {
+
+
+    .section {
+       border: none;
+        margin-left: 30px;
+        margin-right: 30px;
+        height: 830px;
+        width: 400px;
+    }
+
+    .font {
+        font-size: 40px;
+    }
+
+    .h1 {
+        text-align: left;
+        font-weight: 380;
+        color: black;
+        margin-top: 10px;
+        margin-left: 0px;
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .formfields {
+
+        margin-top: 40px;
+        text-align: left;
+        width: 400px;
+    }
+
+    .fields {
+        width: 400px;
+        margin-top: 15px;
+        height: 100px;
+    }
+
+    .passshow {
+        margin-left: -10px;
+        font-size: large;
+        margin-top: -60px;
+    }
+    .end{
+        display: flex; justify-content:space-between;flex-direction: row;margin-top: 20px;
+    }
+    .forgot{
+        margin-left: -100px;font-size: 20px;
+    }
+    .button{
+        position: relative;left: -28px;top: -10px;height: 45px;width: 105px;
+    }
+}
+
+@media only screen and (min-width:415px) and (max-width: 820px){
+    .section {
+        border: none;
+         margin-left: 60px;
+         margin-right: 60px;
+         height: 830px;
+         width: 700px;
+     }
+ 
+     .font {
+         font-size: 60px;
+     }
+ 
+     .h1 {
+         text-align: left;
+         font-weight: 400;
+         color: black;
+         margin-top: 50px;
+         margin-left: 0px;
+         font-size: 40px;
+         margin-bottom: 50px;
+     }
+ 
+     .formfields {
+ 
+         margin-top: 40px;
+         text-align: left;
+         width: 700px;
+     }
+ 
+     .fields {
+         width: 700px;
+         margin-top: 15px;padding: 0;
+         height: 110px;
+     }
+ 
+     .passshow {
+         margin-left: -10px;
+         font-size: xx-large;
+         margin-top: -40px;
+     }
+     .showpass{
+        font-size: 24px;
+     }
+     .end{
+         display: flex; justify-content:space-between;flex-direction: row;margin-top: 20px;
+     }
+     .forgot{
+         margin-left: -100px;font-size: 24px;text-decoration: none;
+     }
+     .button{
+         position: relative;left: 265px;top: -15px;height: 45px;width: 155px;font-size: x-large;
+     }
+     .inputs{
+        height: 120px;
+     }
+ 
 }

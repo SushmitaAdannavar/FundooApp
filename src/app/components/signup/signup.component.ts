@@ -13,7 +13,7 @@ import { UserService } from '../../services/UserService/user.service';
 export class SignupComponent {
   signupForm!:FormGroup;
   submitted=false;
-  hide=false;
+  hide=true;
 
   constructor(private formBuilder:FormBuilder,private router:Router,private userService:UserService){}
 

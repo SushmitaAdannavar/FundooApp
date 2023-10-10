@@ -56,7 +56,16 @@
 
 @media only screen and (max-width: 412px){
     .mainicon{
-        width: 160px;
+        width: 290px;
+        display: flex;
+        justify-content: space-around;
+        margin-left: -10px;
+    }
+}
+
+@media only screen and (min-width:415px) and (max-width: 820px){
+    .mainicon{
+        width: 320px;
         display: flex;
         justify-content: space-around;
         margin-left: -10px;

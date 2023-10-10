@@ -31,6 +31,8 @@ import { TrashComponent } from './components/trash/trash.component';
 import { UpdatenoteComponent } from './components/updatenote/updatenote.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { SearchComponent } from './components/search/search.component';
+import { SearchfilterPipe } from './pipes/searchfilter.pipe';
+import { RemindersComponent } from './components/reminders/reminders.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,9 @@ import { SearchComponent } from './components/search/search.component';
     ArchiveComponent,
     TrashComponent,
     UpdatenoteComponent,
-    SearchComponent
+    SearchComponent,
+    SearchfilterPipe,
+    RemindersComponent
   ],
   imports: [
     BrowserModule,MatMenuModule,

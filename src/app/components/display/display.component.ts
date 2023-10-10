@@ -10,7 +10,7 @@ import { UpdatenoteComponent } from '../updatenote/updatenote.component';
 export class DisplayComponent implements OnInit{
   NotesList!: Array<any>;
   title!: string;
-  
+  minheight="145px"
 
   @Input() childMessage!: Array<any>;
   @Input() childMessage1!:boolean ;

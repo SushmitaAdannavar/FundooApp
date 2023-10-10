@@ -10,6 +10,7 @@ import { TrashComponent } from './components/trash/trash.component';
 import { ArchiveComponent } from './components/archive/archive.component';
 import { SearchComponent } from './components/search/search.component';
 import { AuthenticationGuard } from './authentication.guard';
+import { RemindersComponent } from './components/reminders/reminders.component';
 
 const routes: Routes = [
   {path:'',redirectTo:"/login",pathMatch:'full'},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   {
     path: 'home', component: SidenavComponent,
-    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'search',component:SearchComponent}],
+    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'reminders',component:RemindersComponent},{path:'search',component:SearchComponent}],
     canActivate:[AuthenticationGuard]
   }
 ];

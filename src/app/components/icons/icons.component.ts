@@ -19,6 +19,20 @@ export class IconsComponent {
     this.iconshowarchive=this.iconshow;
     this.icontrash=this.icontrashshow;
   }
+
+  reminder(val:string){
+   let array:any=[];
+   array.push(val);
+let data={
+  noteIdList: [this.lists.id],
+      reminder:array,
+}
+this.notesService.reminderNote(data).subscribe((result)=>{
+  console.log('result',result);
+  this.eventarchive.emit(data);
+})
+  }
+
   delete(){
     
     console.log(this.lists.id)

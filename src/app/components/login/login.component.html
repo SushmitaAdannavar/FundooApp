@@ -1,31 +1,37 @@
-<form [formGroup]="loginForm" >
-<div class="main">
-    <div class="section">
-        <div class="formfields">
-            <h1 style="color: brown;letter-spacing: 0.6px;font-weight: 500;">F<span style="color: yellowgreen;">u</span><span style="color: sandybrown;">n</span><span style="color: blueviolet;">d</span><span style="color: red;">o</span><span style="color: green;">o</span></h1><br>
-            <h1 style="text-align: left;font-weight: 200;color:black;margin-left: 100px;">Sign in</h1>
-            <div>
-                <mat-form-field appearance="outline" style="width: 330px;">
-                  <mat-label>Username</mat-label>
-                  <input formControlName="email" matInput placeholder="Placeholder">
-                  <mat-error>Please enter valid email</mat-error>
-                </mat-form-field>
+<form [formGroup]="loginForm">
+    <div class="main">
+        <div class="section">
+            <div class="formfields">
+                <h1 class="font" style="color: brown;letter-spacing: 0.6px;font-weight: 500;">F<span
+                        style="color: yellowgreen;">u</span><span style="color: sandybrown;">n</span><span
+                        style="color: blueviolet;">d</span><span style="color: red;">o</span><span
+                        style="color: green;">o</span></h1><br>
+                <h1 class="h1">Sign in</h1>
+                <div>
+                    <mat-form-field appearance="outline" class="fields">
+                       
+                        <input formControlName="email" matInput placeholder="Username"  class="inputs">
+                        <mat-error>Please enter valid email</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="fields">
+                        
+                        <input formControlName="password" matInput [type]="hide ? 'text' : 'password'"
+                            placeholder="Password"  class="inputs">
+                        <mat-error>It should be minimum 6 characters</mat-error>
+                        <mat-hint></mat-hint>
+                    </mat-form-field>
+                </div>
+                <mat-checkbox (change)="hide = !hide" class="passshow"><span class="showpass">Show password</span></mat-checkbox>
+                <br><br><br>
+                <div class="end">
+                    <a routerLink="/forgotpassword" class="forgot">
+                        <p style="color: blue;">Forgot Password?</p>
+                    </a>
+                    <button mat-raised-button color="primary" (click)="login()" type="button" class="button">Login</button>
+                </div>
             </div>
-            <div>
-                <mat-form-field appearance="outline" style="width: 330px;">
-                  <mat-label>Password</mat-label>
-                  <input  formControlName="password" matInput [type]="hide ? 'text' : 'password'" placeholder="Placeholder">
-                  <mat-error>It should be minimum 6 characters</mat-error>
-                  <mat-hint></mat-hint>
-                </mat-form-field>
-            </div>
-            <mat-checkbox (change)="hide = !hide" style="text-align: left;margin-left: -200px;margin-top: 0px;">Show password</mat-checkbox>
-            <br><br><br>
-            <div style="display: flex; justify-content:space-between;flex-direction: row;width: 330px;margin-left: 100px;text-align: center;">
-            <a routerLink="/forgotpassword"><p style="color: blue;">Forgot Password?</p><br></a>
-            <button mat-raised-button color="primary" (click)="login()" type="button">Login</button>
-        </div>
         </div>
     </div>
-</div>
 </form>
