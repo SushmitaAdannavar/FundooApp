@@ -17,7 +17,7 @@ export class GetallnotesComponent implements OnInit{
 
  ngOnInit(): void{
   this.notesService.getallNote().subscribe((res:any)=>{
-    console.log("get notes success",res.data.data[0].title)
+    console.log("get notes success")
    this.NoteList=res.data.data;
     
     this.NotesList=this.NoteList.filter((val)=>{
