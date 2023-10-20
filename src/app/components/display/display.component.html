@@ -1,5 +1,5 @@
 <div class="notesList">
-    <div *ngFor="let list of childMessage"  class="notes" [style.background]="list.color">
+    <div *ngFor="let list of childMessage "  class="notes" [style.background]="list.color">
         <div class="title" >
             <h3 (click)="openDialog(list)">{{list.title}}</h3>
             <img src="../../../assets/pushpinfinal.svg" height="25px" width="40px" class="icon1">

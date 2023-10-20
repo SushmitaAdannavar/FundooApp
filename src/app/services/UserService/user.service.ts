@@ -19,29 +19,29 @@ export class UserService {
     };
     return this.httpService.PostService('user/userSignUp', reqdata, false, httpOptions)
   }
-  loginService(reqdata:any) {
+  loginService(reqdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-      //  Authorization:'my-auth-token'
+        //  Authorization:'my-auth-token'
       })
     };
     return this.httpService.PostService('user/login', reqdata, false, httpOptions)
   }
-  forgotpasswordService(reqdata:any) {
+  forgotpasswordService(reqdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-      //  Authorization:'my-auth-token'
+        //  Authorization:'my-auth-token'
       })
     };
     return this.httpService.PostService('user/reset', reqdata, false, httpOptions)
   }
-  resetpasswordService(reqdata:any) {
+  resetpasswordService(reqdata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-      //  Authorization:'my-auth-token'
+        //  Authorization:'my-auth-token'
       })
     };
     return this.httpService.PostService('user/reset-password', reqdata, false, httpOptions)

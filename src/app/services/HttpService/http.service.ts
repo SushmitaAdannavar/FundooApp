@@ -17,8 +17,8 @@ export class HttpService {
     console.log("Inside function" + reqBody)
     return this.http.post(this.BaseURL + url, reqBody, token && httpOption);
   }
-  GetService(url: string,  token: boolean, httpOption: any) {
-    return this.http.get(this.BaseURL+url,token && httpOption);
+  GetService(url: string, token: boolean, httpOption: any) {
+    return this.http.get(this.BaseURL + url, token && httpOption);
   }
-  
+
 }

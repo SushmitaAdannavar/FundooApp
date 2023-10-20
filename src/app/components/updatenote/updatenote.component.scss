@@ -1,56 +1,87 @@
-.updatemain{
-    height:220px;width:500px;
-    display:flex;
-    flex-direction:column;
+.updatemain {
+    height: 220px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
 }
-.title{
+
+.title {
     margin-bottom: 0;
-    height: 50px;width: 500px;overflow: hidden;
-}
-.titleform{
-    width: 510px;margin-top: -3px;height: 70px;margin-left: -3px;
+    height: 50px;
+    width: 500px;
+    overflow: hidden;
 }
 
-.description{
-    margin-bottom: 0;height: 87px;overflow: hidden;
+.titleform {
+    width: 510px;
+    margin-top: -3px;
+    height: 70px;
+    margin-left: -3px;
 }
-.descform{
-    width: 527px;border-color: white;height: 117px;margin-top: -3px;margin-left: -2px;
+
+.description {
+    margin-bottom: 0;
+    height: 87px;
+    overflow: hidden;
 }
-.icons{
+
+.descform {
+    width: 527px;
+    border-color: white;
+    height: 117px;
+    margin-top: -3px;
+    margin-left: -2px;
+}
+
+.icons {
     display: flex;
     justify-content: space-between;
     width: 490px;
     background-color: white;
     z-index: 2;
 }
-.iconform{
-    display: flex;justify-content: space-between;width:350px;margin-left: 10px;
+
+.iconform {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-left: 10px;
 }
 
-@media only screen and (max-width: 412px){
+@media only screen and (max-width: 412px) {
 
-    .updatemain{
-        height:220px;width:325px;
-        display:flex;
-        flex-direction:column;
+    .updatemain {
+        height: 220px;
+        width: 325px;
+        display: flex;
+        flex-direction: column;
         justify-content: space-around;
     }
-    .titleform{
-        width: 335px;margin-top: -3px;margin-left: -3px;
+
+    .titleform {
+        width: 335px;
+        margin-top: -3px;
+        margin-left: -3px;
     }
-    .descform{
-        width: 335px;border-color: white;
+
+    .descform {
+        width: 335px;
+        border-color: white;
     }
-    .icons{
+
+    .icons {
         display: flex;
         justify-content: space-between;
         width: 325px;
         background-color: white;
         z-index: 2;
     }
-    .iconform{
-        display: flex;justify-content: space-between;width:110px;margin-left: 0px;
+
+    .iconform {
+        display: flex;
+        justify-content: space-between;
+        width: 110px;
+        margin-left: 0px;
     }
 }

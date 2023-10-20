@@ -6,16 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class SearchfilterPipe implements PipeTransform {
 
   transform(data: Array<any>, search: string) {
-    
-    if (search==='') {
+
+    if (search === '') {
       return data;
     }
-    const users = data.filter((value)=>{
+    const users = data.filter((value) => {
       return value.name.includes(search);
     })
-    
+
     return users;
-    
+
   }
 
 }

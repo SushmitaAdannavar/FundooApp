@@ -7,106 +7,106 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class NotesService {
 
-  token:any;
+  token: any;
 
-  constructor(private httpService:HttpService) { }
+  constructor(private httpService: HttpService) { }
 
-  createNote(reqdata:any){
+  createNote(reqdata: any) {
 
-    this.token=localStorage.getItem('token')
+    this.token = localStorage.getItem('token')
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-         Authorization:this.token 
+        Authorization: this.token
       })
     };
     return this.httpService.PostService('notes/addNotes', reqdata, true, httpOptions)
   }
 
-  getallNote(){
+  getallNote() {
 
-    this.token=localStorage.getItem('token')
+    this.token = localStorage.getItem('token')
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-         Authorization:this.token 
+        Authorization: this.token
       })
     };
     return this.httpService.GetService('notes/getNotesList', true, httpOptions)
   }
 
-  deleteNote(data:any){
+  deleteNote(data: any) {
 
-  this.token=localStorage.getItem('token')
-
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-         Authorization:this.token
-      })
-    };
-    return this.httpService.PostService('notes/trashNotes',data, true, httpOptions)
-  }
-  deleteNotePermanent(data:any){
-    this.token=localStorage.getItem('token')
+    this.token = localStorage.getItem('token')
 
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-         Authorization:this.token
+        Authorization: this.token
       })
     };
-    return this.httpService.PostService('notes/deleteForeverNotes',data, true, httpOptions)
+    return this.httpService.PostService('notes/trashNotes', data, true, httpOptions)
   }
-  ArchiveNote(data:any){
+  deleteNotePermanent(data: any) {
+    this.token = localStorage.getItem('token')
 
-    this.token=localStorage.getItem('token')
-  
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-           Authorization:this.token
-        })
-      };
-      return this.httpService.PostService('notes/archiveNotes',data, true, httpOptions)
-    }
-  UpdateNote(data:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/deleteForeverNotes', data, true, httpOptions)
+  }
+  ArchiveNote(data: any) {
 
-    this.token=localStorage.getItem('token')
-    
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-            Authorization:this.token
-        })
-      };
-      return this.httpService.PostService('notes/updateNotes',data, true, httpOptions)
-    }
+    this.token = localStorage.getItem('token')
 
-  colorNote(data:any){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/archiveNotes', data, true, httpOptions)
+  }
+  UpdateNote(data: any) {
 
-    this.token=localStorage.getItem('token')
-      
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-            Authorization:this.token
-          })
-      };
-      return this.httpService.PostService('notes/changesColorNotes',data, true, httpOptions)
-    }
+    this.token = localStorage.getItem('token')
 
-    reminderNote(data:any){
-      this.token=localStorage.getItem('token')
-      
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-            Authorization:this.token
-          })
-      };
-      return this.httpService.PostService('notes/addUpdateReminderNotes',data, true, httpOptions)
-    }
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/updateNotes', data, true, httpOptions)
+  }
+
+  colorNote(data: any) {
+
+    this.token = localStorage.getItem('token')
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/changesColorNotes', data, true, httpOptions)
+  }
+
+  reminderNote(data: any) {
+    this.token = localStorage.getItem('token')
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/addUpdateReminderNotes', data, true, httpOptions)
+  }
 
 
 

@@ -11,16 +11,17 @@
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
     </div>
-    <div style="width: 130px;display: flex;justify-content: space-between;" >
+    <div style="width: 130px;display: flex;justify-content: space-between;">
       <img src="../../../../assets/refresh_FILL0_wght400_GRAD0_opsz24.png" class="tabview">
       <img src="../../../../assets/view_agenda_FILL0_wght400_GRAD0_opsz24.png" class="tabview">
       <img src="../../../../assets/settings_FILL0_wght400_GRAD0_opsz24.png" class="tabview">
-      <img src="../../../../assets/profileimg.png" [matMenuTriggerFor]="menulogout" height="23px" width="23px" class="profileimg">
-            <mat-menu #menulogout="matMenu">
-                <button mat-menu-item (click)="logout()">
-                    <span>Log out</span>
-                </button>
-            </mat-menu>
+      <img src="../../../../assets/profileimg.png" [matMenuTriggerFor]="menulogout" height="23px" width="23px"
+        class="profileimg">
+      <mat-menu #menulogout="matMenu">
+        <button mat-menu-item (click)="logout()">
+          <span>Log out</span>
+        </button>
+      </mat-menu>
     </div>
   </mat-toolbar>
   <mat-divider style="margin-top: 8px;"> </mat-divider>
@@ -30,7 +31,12 @@
       <mat-nav-list>
         <br>
         <a mat-list-item routerLink="./notes" class="sidebar" routerLinkActive="active">
-          <div class="sidebar1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="sidevalues" style="margin-left: 11px;"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"></path></svg>
+          <div class="sidebar1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              class="sidevalues" style="margin-left: 11px;">
+              <path
+                d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z">
+              </path>
+            </svg>
             <p style="margin-top: 13px;width: 170px;" class="sidevalues">Notes </p>
           </div>
         </a>
