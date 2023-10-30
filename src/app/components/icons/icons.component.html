@@ -10,7 +10,7 @@
             <span>Tomorrow</span>
         </button>
     </mat-menu>
-    <img *ngIf="!icontrash" src="../../../assets/personadd2.svg">
+    <img *ngIf="!icontrash" src="../../../assets/personadd2.svg" (click)="collaborator()">
 
     <img *ngIf="!icontrash" src="../../../assets/palette.svg" (click)="colorpallette()" class="cp">
 

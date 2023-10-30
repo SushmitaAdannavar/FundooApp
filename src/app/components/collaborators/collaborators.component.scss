@@ -1,0 +1,116 @@
+.collabmain {
+    min-height: 250px;
+    border: 1px;
+    width: 500px;
+    display: flex;background-color: white;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.collabhead {
+    position: relative;
+    top: -3px;
+    left: 11px;
+    width: 450px;
+    font-size: 18px;
+    font-weight: 450;
+}
+
+.divider {
+    position: relative;
+    top: -28px;
+    width: 478px;
+    left: 11px;
+}
+
+.firstletter {
+    position: relative;
+    border-radius: 50%;
+    background-color: #EF6C00;
+    color: white;
+    height: 37px;
+    width: 37px;
+    text-align: center;
+    font-size: large;
+}
+
+.firstletter1 {
+    position: relative;
+    border: 1px solid;
+    border-radius: 50%;
+    height: 37px;
+    width: 37px;
+    text-align: center;
+    font-size: large;
+}
+
+.letter {
+    position: relative;
+    top: 7px;
+}
+
+.listout {
+    position: relative;
+    width: 478px;
+    left: 11px;
+    display: flex;
+    justify-content: space-between;
+    top: -32px;
+}
+.listoutval{
+    position: relative;
+    width: 478px;
+    left: 11px;
+    display: flex;
+    justify-content: space-between;
+    top: -50px;
+}
+
+.fullname {
+    position: relative;
+    top: 31px;
+}
+
+.name {
+    width: 433px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 7px;
+    position: relative;
+    top: 3px;
+}
+
+.email {
+    font-weight: 350;
+    color: gray;
+    margin-top: 8px;
+}
+
+.close {
+    color: gray;margin-top: 7px;padding-left: 20px;padding-right: 45px;
+}
+
+.footer {
+    text-align: right;background-color:#EDEDED ;position: relative;top:-3px;bottom: -65px;height: 56px;margin-bottom: -10px;
+}
+.namefield{
+    width: 428px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 10px;
+    position: relative;
+    top: 0px;left:-12px;height: 40px;overflow: hidden;
+}
+.matfield{
+    width: 440px;position: relative;left:-5px;top: 10px;
+}
+
+@media only screen and (max-width: 412px)  {
+    
+ .collabmain{
+    max-width: 360px;position: fixed;
+    margin-left: -180px;margin-top: -100px;
+ }
+}

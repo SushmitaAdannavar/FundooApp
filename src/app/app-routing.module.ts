@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'resetpassword', component: ResetpasswordComponent },
   {
     path: 'home', component: SidenavComponent,
-    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'reminders',component:RemindersComponent},{path:'search',component:SearchComponent}],
+    children: [{ path: 'notes', component: GetallnotesComponent },{ path: 'trash', component: TrashComponent },{ path: 'archive', component: ArchiveComponent },{path:'search',component:SearchComponent}],
     canActivate:[AuthenticationGuard]
   }
 ];

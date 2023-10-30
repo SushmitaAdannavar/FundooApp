@@ -1,4 +1,4 @@
-<div class="updatemain">
+<div class="updatemain" [style.background]="colors">
     <div class="title divfields">
         <mat-form-field class="titleform inputs" appearance="outline">
             <input matInput [(ngModel)]="title">
@@ -10,12 +10,10 @@
             <textarea matInput [(ngModel)]="description"></textarea>
         </mat-form-field>
     </div>
-    <div class="icons">
-        <div class="iconform">
-            <app-icons></app-icons>
+    <div class="icons"  [style.background]="colors">
+        <div class="iconform" >
+            <app-icons [lists]="list" [iconshow]="show" (eventupdatecolor)="forcolor($event)"></app-icons>
         </div>
-        <button mat-button matSuffix (click)="close()">Close</button>
+        <button mat-button matSuffix (click)="close()" class="close">Close</button>
     </div>
-
-
 </div>

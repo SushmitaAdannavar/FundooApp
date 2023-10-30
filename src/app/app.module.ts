@@ -33,6 +33,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { SearchComponent } from './components/search/search.component';
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
 import { RemindersComponent } from './components/reminders/reminders.component';
+import { CollaboratorsComponent } from './components/collaborators/collaborators.component';
+import { DialogComponent } from './dialog/dialog.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +53,9 @@ import { RemindersComponent } from './components/reminders/reminders.component';
     UpdatenoteComponent,
     SearchComponent,
     SearchfilterPipe,
-    RemindersComponent
+    RemindersComponent,
+    CollaboratorsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,MatMenuModule,

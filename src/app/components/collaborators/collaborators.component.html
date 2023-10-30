@@ -1,0 +1,32 @@
+<div class="collabmain" [formGroup]="collabForm">
+    <h2 class="collabhead">Collaborators</h2>
+    <mat-divider class="divider"></mat-divider>
+    <div class="listout">
+        <div class="firstletter">
+            <span class="letter">{{name.charAt(0)}}</span>
+        </div>
+        <div class="name">
+            <h3 class="fullname">{{name }}<i style="font-weight: 100;">(Owner)</i></h3>
+            <p class="email">{{email}}</p>
+        </div>
+    </div>
+    <div>
+    <ng-template #template>
+        This email isn't valid.  
+    </ng-template> 
+    </div>
+    <div class="listoutval">
+        <div class="firstletter1">
+            <img src="../../../assets/personadd2.svg" class="letter">
+        </div>
+        <div class="namefield">
+            <mat-form-field appearance="outline" class="matfield">
+                <input matInput placeholder="Person or email to share with" formControlName="persontoshare">
+            </mat-form-field>
+        </div>
+    </div>
+    <footer class="footer">
+        <button mat-button matSuffix class="close" (click)="cancel()">Cancel</button>
+        <button mat-button  matSuffix class="close" (click)="save()">Save</button>
+    </footer>
+</div>

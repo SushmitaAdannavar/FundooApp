@@ -108,6 +108,19 @@ export class NotesService {
     return this.httpService.PostService('notes/addUpdateReminderNotes', data, true, httpOptions)
   }
 
+  noteCollaborators(data:any){
+
+    this.token = localStorage.getItem('token')
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/'+data.noteIdList+'/AddcollaboratorsNotes', data, true, httpOptions)
+  }
+
 
 
 }

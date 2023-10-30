@@ -1,5 +1,5 @@
 
-<div class="creatediv">
+<div class="creatediv" [style.background]="colors">
   <div *ngIf="show" class="divfields">
       <mat-form-field appearance="outline" class="inputs">
         <input matInput placeholder="Title" (click)="open()" [(ngModel)]="title">
@@ -15,7 +15,7 @@
     </mat-form-field>
   </div>
   <div *ngIf="show" class="iconstyle">
-    <div class="icon"><app-icons ></app-icons></div>
+    <div class="icon"><app-icons (eventcolor)="forcolor($event)" (eventarchive)="forarchive($event)" (eventdelete)="fordelete($event)"></app-icons></div>
     <button mat-button (click)="close()" matSuffix class="close">Close</button>
   </div>
 </div>

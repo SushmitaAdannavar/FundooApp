@@ -33,6 +33,8 @@ export class LoginComponent {
     this.userService.loginService(requestdata).subscribe((result:any)=>{
       console.log('result',result);
       localStorage.setItem('token',result.id);
+      localStorage.setItem('name',result.firstName+" "+result.lastName);
+      localStorage.setItem('email',result.email)
       this.router.navigate(['/home/notes'])
     });
   }

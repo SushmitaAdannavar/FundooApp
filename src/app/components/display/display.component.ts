@@ -30,7 +30,7 @@ export class DisplayComponent implements OnInit{
   openDialog(list:any): void {
     console.log('clicked',list.title)
     const dialogRef = this.dialog.open(UpdatenoteComponent, {
-      data: list,
+      data: {list,show:this.childMessage1},
     });
 
     dialogRef.afterClosed().subscribe(result => {
